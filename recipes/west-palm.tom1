@@ -1,0 +1,25 @@
+
+title = "West Palm Beach"
+subtitle = "Palm Tran morning rush"
+note = "Scheduled bus movements"
+
+[feed]
+url = "http://www.palmtran.org/feed/google_transit.zip"
+attribution = "Palm Tran GTFS"
+
+[time]
+date = "next-weekday"
+start = "07:30"
+minutes = 20
+
+[video]
+format = "horizontal"
+fps = 15
+seconds = 10
+width = 640
+height = 360
+
+[map]
+center = [-80.055, 26.715]
+width_km = 15
+water = true
