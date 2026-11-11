@@ -15,4 +15,4 @@ jobs:
         uses: astral-sh/setup-uv@v6
 
       - name: Find West Palm Beach transit feeds
-        run: uv run transit-reels find "West Palm Beach"
+        run: uv run transit-reels find "Palm Tran"
