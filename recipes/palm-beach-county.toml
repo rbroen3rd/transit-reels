@@ -1,0 +1,33 @@
+
+title = "Palm Beach County"
+subtitle = "Morning Transit Rush"
+note = "Palm Tran • Tri-Rail • Brightline"
+
+[[feeds]]
+url = "http://www.palmtran.org/feed/google_transit.zip"
+attribution = "Palm Tran"
+
+[[feeds]]
+url = "https://gtfs.tri-rail.com/gtfs.zip"
+attribution = "Tri-Rail"
+
+[[feeds]]
+url = "https://feed.gobrightline.com/bl_gtfs.zip"
+attribution = "Brightline"
+
+[time]
+date = "next-weekday"
+start = "06:00"
+minutes = 180
+
+[video]
+format = "horizontal"
+fps = 20
+seconds = 45
+width = 1280
+height = 720
+
+[map]
+center = [-80.105, 26.665]
+width_km = 80
+water = true
