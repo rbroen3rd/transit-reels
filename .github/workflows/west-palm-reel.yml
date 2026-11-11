@@ -1,5 +1,5 @@
 
-name: West Palm Beach Transit Reel
+name: Palm Beach County Transit Reel
 
 on:
   workflow_dispatch:
@@ -7,19 +7,21 @@ on:
 jobs:
   render:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
+
     steps:
       - uses: actions/checkout@v4
 
       - uses: astral-sh/setup-uv@v6
 
-      - name: Render morning rush
+      - name: Render countywide morning rush
         run: |
-         uv run transit-reels render recipes/palm-beach-county.toml
+          uv run transit-reels render recipes/palm-beach-county.toml
 
       - name: Upload video
         uses: actions/upload-artifact@v4
         with:
-          name: west-palm-preview
-          path: work/west-palm/*.mp4
+          name: palm-beach-county-reel
+          path: work/palm-beach-county/*.mp4
           if-no-files-found: error
+
