@@ -5,14 +5,21 @@ on:
   workflow_dispatch:
 
 jobs:
-  discover:
+  render:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v6
+      - uses: astral-sh/setup-uv@v6
 
-      - name: Find West Palm Beach transit feeds
-        run: uv run transit-reels find "Palm Tran"
+      - name: Render morning rush
+        run: |
+          uv run transit-reels render recipes/west-palm.toml
+
+      - name: Upload video
+        uses: actions/upload-artifact@v4
+        with:
+          name: west-palm-preview
+          path: work/west-palm/*.mp4
+          if-no-files-found: error
